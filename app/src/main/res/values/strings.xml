@@ -55,5 +55,7 @@
     <string name="Descripcion_Item"> Descripcion</string>
     <string name="Fecha_Item"> 00/00/0000 </string>
     <string name="Estado_Item"> No finalizado</string>
-
+    <string name="ElijaOpcionTXT">Elija una opcion</string>
+    <string name="CD_Eliminar">Eliminar</string>
+    <string name="CD_Actualizar">Actualizar</string>
 </resources>
