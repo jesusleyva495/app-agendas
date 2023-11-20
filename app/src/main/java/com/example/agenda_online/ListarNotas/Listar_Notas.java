@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.agenda_online.ActualizarNota.Actualizar_Nota;
 import com.example.agenda_online.Objetos.Nota;
 import com.example.agenda_online.R;
 import com.example.agenda_online.ViewHolder.ViewHolder_Nota;
@@ -89,7 +91,15 @@ public class Listar_Notas extends AppCompatActivity {
 
                     @Override
                     public void onItemLongClick(View view, int position) {
+
                         String id_nota =getItem(position).getId_nota();
+                        String uid_usuario = getItem(position).getUid_usuario();
+                        String correo_usuario=getItem(position).getCorreo_usuario();
+                        String fecha_registro=getItem(position).getFecha_hora_actual();
+                        String titulo=getItem(position).getTitulo();
+                        String descripcion=getItem(position).getDescripcion();
+                        String fecha_nota=getItem(position).getFecha_nota();
+                        String estado=getItem(position).getEstado();
                         Button CD_Eliminar,CD_Actualizar;
                         dialog.setContentView(R.layout.dialogo_opciones);
                         CD_Eliminar=dialog.findViewById(R.id.CD_Eliminar);
@@ -104,7 +114,18 @@ public class Listar_Notas extends AppCompatActivity {
                         CD_Actualizar.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Toast.makeText(Listar_Notas.this, "Actualizar nota", Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(Listar_Notas.this, "Actualizar nota", Toast.LENGTH_SHORT).show();
+                                //startActivity(new Intent(Listar_Notas.this, Actualizar_Nota.class));
+                                Intent intent = new Intent(Listar_Notas.this, Actualizar_Nota.class);
+                                intent.putExtra("id_nota", id_nota);
+                                intent.putExtra("uid_usuario", uid_usuario);
+                                intent.putExtra("correo_usuario", correo_usuario);
+                                intent.putExtra("fecha_registro", fecha_registro);
+                                intent.putExtra("titulo", titulo);
+                                intent.putExtra("descripcion", descripcion);
+                                intent.putExtra("fecha_nota", fecha_nota);
+                                intent.putExtra("estado", estado);
+                                startActivity(intent);
                                 dialog.dismiss();
                             }
                         });
