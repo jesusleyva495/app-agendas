@@ -7,6 +7,9 @@ import androidx.appcompat.widget.LinearLayoutCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -43,7 +46,7 @@ public class MenuPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_menu_principal);
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Agenda Online");
+        actionBar.setTitle("");
 
         UidPrincipal = findViewById(R.id.UidPrincipal);
         NombresPrincipal = findViewById(R.id.NombresPrincipal);
@@ -166,6 +169,20 @@ public class MenuPrincipal extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.Perfil){
+            startActivity(new Intent(MenuPrincipal.this, Perfil_Usuario.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void SalirAplicacion() {
