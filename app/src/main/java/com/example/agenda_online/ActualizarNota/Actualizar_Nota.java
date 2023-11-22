@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -21,7 +20,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.agenda_online.AgregarNota.Agregar_Nota;
 import com.example.agenda_online.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,8 +27,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import org.checkerframework.common.subtyping.qual.Bottom;
 
 import java.util.Calendar;
 
@@ -223,7 +219,7 @@ public class Actualizar_Nota extends AppCompatActivity implements AdapterView.On
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_actualizar, menu);
+        menuInflater.inflate(R.menu.menu_agenda, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
