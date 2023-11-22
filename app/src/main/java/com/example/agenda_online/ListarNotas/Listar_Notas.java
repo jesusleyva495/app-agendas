@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.agenda_online.ActualizarNota.Actualizar_Nota;
+import com.example.agenda_online.Detalle.Detalle_Nota;
 import com.example.agenda_online.Objetos.Nota;
 import com.example.agenda_online.R;
 import com.example.agenda_online.ViewHolder.ViewHolder_Nota;
@@ -96,7 +97,26 @@ public class Listar_Notas extends AppCompatActivity {
                 viewHolder_nota.setOnClickListener(new ViewHolder_Nota.ClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        Toast.makeText(Listar_Notas.this, "on item click", Toast.LENGTH_SHORT).show();
+                        String id_nota =getItem(position).getId_nota();
+                        String uid_usuario = getItem(position).getUid_usuario();
+                        String correo_usuario=getItem(position).getCorreo_usuario();
+                        String fecha_registro=getItem(position).getFecha_hora_actual();
+                        String titulo=getItem(position).getTitulo();
+                        String descripcion=getItem(position).getDescripcion();
+                        String fecha_nota=getItem(position).getFecha_nota();
+                        String estado=getItem(position).getEstado();
+
+                        // Se envian los datos a la siguiente actividad
+                        Intent intent = new Intent(Listar_Notas.this, Detalle_Nota.class);
+                        intent.putExtra("id_nota", id_nota);
+                        intent.putExtra("uid_usuario", uid_usuario);
+                        intent.putExtra("correo_usuario", correo_usuario);
+                        intent.putExtra("fecha_registro", fecha_registro);
+                        intent.putExtra("titulo", titulo);
+                        intent.putExtra("descripcion", descripcion);
+                        intent.putExtra("fecha_nota", fecha_nota);
+                        intent.putExtra("estado", estado);
+                        startActivity(intent);
                     }
 
                     @Override

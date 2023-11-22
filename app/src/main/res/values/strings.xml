@@ -47,6 +47,8 @@
     <!--MENU-->
     <string name="Agregar_Nota_BD">Agregar</string>
     <string name="Actualizar_Nota_BD">Actualizar</string>
+    <string name="Vaciar_Todas_Las_Notas">Vaciar todas las notas</string>
+    <string name="Perfil_usuario">Perfil del usuario</string>
 
     <!--ITEM NOTA-->
     <string name="Id_nota_Item"> Id nota</string>
@@ -57,8 +59,8 @@
     <string name="Descripcion_Item"> Descripcion</string>
     <string name="Fecha_Item"> 00/00/0000 </string>
     <string name="Estado_Item"> No finalizado</string>
-    
-    
+
+
     <string name="ElijaOpcionTXT">Elija una opcion</string>
     <string name="CD_Eliminar">Eliminar</string>
     <string name="CD_Actualizar">Actualizar</string>
@@ -78,6 +80,35 @@
         <item>"No finalizado"</item>
         <item>"Finalizado"</item>
     </string-array>
-
     
+    <!--DETALLE NOTA-->
+    <string name="ID_nota_Detalle_TXT">Id de la nota: </string>
+    <string name="ID_nota_Detalle">Id nota</string>
+    <string name="Uid_Usuario_Detalle_TXT">Uid de usuario: </string>
+    <string name="Uid_Usuario_Detalle">Uid usuario</string>
+    <string name="Correo_usuario_Detalle_TXT">Correo del usuario: </string>
+    <string name="Correo_usuario_Detalle">Correo usuario</string>
+    <string name="Titulo_Detalle_TXT">Titulo: </string>
+    <string name="Titulo_Detalle">Titulo</string>
+    <string name="Descripcion_Detalle_TXT">Descripcion: </string>
+    <string name="Descripcion_Detalle">Descripcion</string>
+    <string name="Fecha_Registro_Detalle_TXT">Fecha de registro: </string>
+    <string name="Fecha_Registro_Detalle">Fecha registro</string>
+    <string name="Fecha_Nota_Detalle_TXT">Fecha nota: </string>
+    <string name="Fecha_Nota_Detalle">Fecha nota</string>
+    <string name="Estado_Detalle_TXT">Estado de la nota: </string>
+    <string name="Estado_Detalle">Estado</string>
+    
+    <!--PERFIL DEL USUARIO-->
+    <string name="Uid_Perfil">Uid</string>
+    <string name="Nombres_Perfil">Mis nombres</string>
+    <string name="Apellidos_Perfil">Mis apellidos</string>
+    <string name="Correo_Perfil">Correo</string>
+    <string name="Edad_Perfil">Edad</string>
+    <string name="Telefono_Perfil">Telefono</string>
+    <string name="Domicilio_Perfil">Domicilio</string>
+    <string name="Universidad_Perfil">Universidad</string>
+    <string name="Profesion_Perfil">Profesion</string>
+    <string name="Guardar_Datos">Guardar datos</string>
+
 </resources>
