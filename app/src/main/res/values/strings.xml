@@ -65,6 +65,10 @@
     <string name="CD_Eliminar">Eliminar</string>
     <string name="CD_Actualizar">Actualizar</string>
 
+    <!--CUADRO DE DIALOGO - ESTABLECER TELEFONO-->
+    <string name="Establecer_Telefono">Escriba su telefono</string>
+    <string name="Btn_Aceptar_Telefono">Aceptar</string>
+
     <string name="id_nota_A">Id nota</string>
     <string name="Uid_Usuario_A"> Uid del usuario</string>
     <string name="Correo_usuario_A">Correo del usuario</string>
@@ -109,6 +113,7 @@
     <string name="Domicilio_Perfil">Domicilio</string>
     <string name="Universidad_Perfil">Universidad</string>
     <string name="Profesion_Perfil">Profesion</string>
+    <string name="Fecha_Nacimiento_Perfil">Fecha de nac.</string>
     <string name="Guardar_Datos">Guardar datos</string>
 
 </resources>
