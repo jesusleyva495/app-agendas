@@ -139,6 +139,7 @@ public class Registro extends AppCompatActivity {
         Datos.put("domicilio", "");
         Datos.put("universidad", "");
         Datos.put("profesion", "");
+        Datos.put("fecha_de_nacimiento", "");
         Datos.put("imagen-perfil", "");
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios");

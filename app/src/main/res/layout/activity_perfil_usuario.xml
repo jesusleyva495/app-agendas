@@ -98,14 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-            <!--TELEFONO-->
-            <EditText
-                android:id="@+id/Telefono_Perfil"
-                android:hint="@string/Telefono_Perfil"
-                android:inputType="phone"
-                android:fontFamily="@font/worksans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+
 
             <!--DOMICILIO-->
             <EditText
@@ -133,6 +126,55 @@
                 android:fontFamily="@font/worksans"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <!--TELEFONO-->
+                <TextView
+                    android:id="@+id/Telefono_Perfil"
+                    android:hint="@string/Telefono_Perfil"
+                    android:fontFamily="@font/worksans"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Editar_Telefono"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/editar_telefono"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/Fecha_Nacimiento_Perfil"
+                    android:text="@string/Fecha_Nacimiento_Perfil"
+                    android:fontFamily="@font/worksans"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Editar_fecha"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/calendario"/>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <!--GUARDAR DATOS-->
             <Button
