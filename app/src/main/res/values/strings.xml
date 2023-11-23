@@ -68,6 +68,11 @@
     <!--CUADRO DE DIALOGO - ESTABLECER TELEFONO-->
     <string name="Establecer_Telefono">Escriba su telefono</string>
     <string name="Btn_Aceptar_Telefono">Aceptar</string>
+    
+    <!--CUADRO DE DIALOGO - ELEGIR IMAGEN DE-->
+    <string name="ElegirImagenTXT">Elegir imagen de:</string>
+    <string name="Btn_Elegir_Galeria">Galeria</string>
+    <string name="Btn_Elegir_Camara">Camara</string>
 
     <string name="id_nota_A">Id nota</string>
     <string name="Uid_Usuario_A"> Uid del usuario</string>
@@ -84,7 +89,7 @@
         <item>"No finalizado"</item>
         <item>"Finalizado"</item>
     </string-array>
-    
+
     <!--DETALLE NOTA-->
     <string name="ID_nota_Detalle_TXT">Id de la nota: </string>
     <string name="ID_nota_Detalle">Id nota</string>
@@ -102,7 +107,7 @@
     <string name="Fecha_Nota_Detalle">Fecha nota</string>
     <string name="Estado_Detalle_TXT">Estado de la nota: </string>
     <string name="Estado_Detalle">Estado</string>
-    
+
     <!--PERFIL DEL USUARIO-->
     <string name="Uid_Perfil">Uid</string>
     <string name="Nombres_Perfil">Mis nombres</string>
@@ -115,5 +120,9 @@
     <string name="Profesion_Perfil">Profesion</string>
     <string name="Fecha_Nacimiento_Perfil">Fecha de nac.</string>
     <string name="Guardar_Datos">Guardar datos</string>
+
+    <!--PERFIL DEL USUARIO [IMAGEN DE PERFIL]-->
+    <string name="BtnElegirImagenDe">Elegir imagen de</string>
+    <string name="BtnActualizarImagen">Actualizar imagen</string>
 
 </resources>
