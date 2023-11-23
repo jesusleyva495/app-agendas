@@ -41,7 +41,7 @@ public class Perfil_Usuario extends AppCompatActivity {
     EditText Nombres_Perfil, Apellidos_Perfil, Edad_Perfil, Domicilio_Perfil, Universidad_Perfil, Profesion_Perfil;
     Button Guardar_Datos;
 
-    ImageView Editar_Telefono, Editar_fecha;
+    ImageView Editar_Telefono, Editar_fecha, Editar_imagen;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -83,6 +83,13 @@ public class Perfil_Usuario extends AppCompatActivity {
                 ActualizarDatos();
             }
         });
+
+        Editar_imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Perfil_Usuario.this, Editar_imagen_perfil.class));
+            }
+        });
     }
 
     private void InicializarVariables(){
@@ -100,6 +107,7 @@ public class Perfil_Usuario extends AppCompatActivity {
 
         Editar_Telefono = findViewById(R.id.Editar_Telefono);
         Editar_fecha = findViewById(R.id.Editar_fecha);
+        Editar_imagen = findViewById(R.id.Editar_imagen);
 
         dialog_establecer_telefono = new Dialog(Perfil_Usuario.this);
 
