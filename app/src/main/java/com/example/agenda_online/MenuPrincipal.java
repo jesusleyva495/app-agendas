@@ -13,10 +13,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.agenda_online.Notas.Agregar_Nota;
 import com.example.agenda_online.Notas.Listar_Notas;
 import com.example.agenda_online.Perfil.Perfil_Usuario;
@@ -34,6 +36,7 @@ public class MenuPrincipal extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
+    ImageView Imagen_usuario;
     TextView UidPrincipal,NombresPrincipal, CorreoPrincipal;
     ProgressBar progressBarDatos;
 
@@ -51,6 +54,7 @@ public class MenuPrincipal extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
 
+        Imagen_usuario = findViewById(R.id.Imagen_usuario);
         UidPrincipal = findViewById(R.id.UidPrincipal);
         NombresPrincipal = findViewById(R.id.NombresPrincipal);
         CorreoPrincipal = findViewById(R.id.CorreoPrincipal);
@@ -168,6 +172,7 @@ public class MenuPrincipal extends AppCompatActivity {
                     String uid = ""+snapshot.child("uid").getValue();
                     String nombres = ""+snapshot.child("nombres").getValue();
                     String correo = ""+snapshot.child("correo").getValue();
+                    String imagen = ""+snapshot.child("imagen-perfil").getValue();
 
                     // Setear los datos en los respectivos TextView
                     UidPrincipal.setText(uid);
@@ -180,6 +185,8 @@ public class MenuPrincipal extends AppCompatActivity {
                     Perfil.setEnabled(true);
                     AcercaDe.setEnabled(true);
                     CerrarSesion.setEnabled(true);
+                    
+                    ObtenerImagen(imagen);
 
                 } else {
                     // Si los datos no existen en la base de datos, puedes mostrar un mensaje de error
@@ -192,6 +199,16 @@ public class MenuPrincipal extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void ObtenerImagen(String imagen) {
+        try {
+            //Si la imagen se ha traido con exito
+            Glide.with(getApplicationContext()).load(imagen).placeholder(R.drawable.imagen_usuario).into(Imagen_usuario);
+        }catch (Exception e){
+            //si la imagen NO fue traida con exito
+            Glide.with(getApplicationContext()).load(R.drawable.imagen_usuario).into(Imagen_usuario);
+        }
     }
 
     @Override
