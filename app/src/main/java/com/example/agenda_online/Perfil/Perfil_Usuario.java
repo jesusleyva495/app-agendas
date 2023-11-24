@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.agenda_online.ActualizarNota.Actualizar_Nota;
 import com.example.agenda_online.ActualizarPass.ActualizarPassUsuario;
 import com.example.agenda_online.MenuPrincipal;
 import com.example.agenda_online.R;

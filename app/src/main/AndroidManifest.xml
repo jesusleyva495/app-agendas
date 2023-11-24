@@ -28,19 +28,19 @@
             android:name=".Perfil.Editar_imagen_perfil"
             android:exported="false" />
         <activity
-            android:name=".Detalle.Detalle_Nota"
+            android:name=".Notas.Detalle_Nota"
             android:exported="false" />
         <activity
-            android:name=".ActualizarNota.Actualizar_Nota"
+            android:name=".Notas.Actualizar_Nota"
             android:exported="false" />
         <activity
             android:name=".Perfil.Perfil_Usuario"
             android:exported="false" />
         <activity
-            android:name=".ListarNotas.Listar_Notas"
+            android:name=".Notas.Listar_Notas"
             android:exported="false" />
         <activity
-            android:name=".AgregarNota.Agregar_Nota"
+            android:name=".Notas.Agregar_Nota"
             android:exported="false" />
         <activity
             android:name=".MenuPrincipal"
