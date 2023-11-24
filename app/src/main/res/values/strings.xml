@@ -134,4 +134,10 @@
     <string name="EtRNuevoPass">Repetir nueva contraseña</string>
     <string name="BtnActualizarPass">Actualizar</string>
 
+    <!--INFORMACION DE APLICACION-->
+    <string name="Desarrolladores">Desarrollado por: Leyva Rodriguez Jesus Alberto, Rios Montoya Daniel Antonio, Vizcarra Cota Alfredo</string>
+    <string name="CorreoSoporte">Soporte: ewaland2.0@gmail.com</string>
+    <string name="Version">Version: 0.0.1</string>
+    <string name="EntendidoInfo">Entendido</string>
+
 </resources>

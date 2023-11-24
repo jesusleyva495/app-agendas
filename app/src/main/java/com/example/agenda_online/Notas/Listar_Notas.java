@@ -1,4 +1,4 @@
-package com.example.agenda_online.ListarNotas;
+package com.example.agenda_online.Notas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -17,8 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.agenda_online.ActualizarNota.Actualizar_Nota;
-import com.example.agenda_online.Detalle.Detalle_Nota;
 import com.example.agenda_online.Objetos.Nota;
 import com.example.agenda_online.R;
 import com.example.agenda_online.ViewHolder.ViewHolder_Nota;
@@ -37,7 +35,7 @@ public class Listar_Notas extends AppCompatActivity {
 
     RecyclerView recyclerviewNotas;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference BASE_DE_DATOS;
+    DatabaseReference BD_Usuarios;
     LinearLayoutManager linearLayoutManager;
 
     FirebaseRecyclerAdapter<Nota, ViewHolder_Nota> firebaseRecyclerAdapter;
@@ -65,14 +63,14 @@ public class Listar_Notas extends AppCompatActivity {
         user = auth.getCurrentUser();
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        BASE_DE_DATOS = firebaseDatabase.getReference("Notas_Publicadas");
+        BD_Usuarios = firebaseDatabase.getReference("Usuarios");
         dialog=new Dialog(Listar_Notas.this);
         ListarNotasUsuarios();
     }
 
     private void ListarNotasUsuarios(){
         //Consulta
-        Query query = BASE_DE_DATOS.orderByChild("uid_usuario").equalTo(user.getUid());
+        Query query = BD_Usuarios.child(user.getUid()).child("Notas_Publicadas").orderByChild("fecha_nota");
         options = new FirebaseRecyclerOptions.Builder<Nota>().setQuery(query, Nota.class).build();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Nota, ViewHolder_Nota>(options) {
             @Override
@@ -184,7 +182,7 @@ public class Listar_Notas extends AppCompatActivity {
         builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Query query = BASE_DE_DATOS.orderByChild("id_nota").equalTo(id_nota);
+                Query query = BD_Usuarios.child(user.getUid()).child("Notas_Publicadas").orderByChild("id_nota").equalTo(id_nota);
                 query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

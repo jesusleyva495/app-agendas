@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,8 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.agenda_online.AgregarNota.Agregar_Nota;
-import com.example.agenda_online.ListarNotas.Listar_Notas;
+import com.example.agenda_online.Notas.Agregar_Nota;
+import com.example.agenda_online.Notas.Listar_Notas;
 import com.example.agenda_online.Perfil.Perfil_Usuario;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +41,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
     DatabaseReference Usuarios;
 
+    Dialog dialog_informacion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,8 @@ public class MenuPrincipal extends AppCompatActivity {
         NombresPrincipal = findViewById(R.id.NombresPrincipal);
         CorreoPrincipal = findViewById(R.id.CorreoPrincipal);
         progressBarDatos = findViewById(R.id.progressBarDatos);
+
+        dialog_informacion = new Dialog(this);
 
         Linear_Nombres = findViewById(R.id.Linear_Nombres);
         Linear_Correo = findViewById(R.id.Linear_Correo);
@@ -100,7 +105,7 @@ public class MenuPrincipal extends AppCompatActivity {
         AcercaDe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MenuPrincipal.this, "Acerca De", Toast.LENGTH_SHORT).show();
+                Informacion();
             }
         });
         CerrarSesion.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +114,24 @@ public class MenuPrincipal extends AppCompatActivity {
                 SalirAplicacion();
             }
         });
+    }
+
+    protected  void Informacion(){
+        Button EntendidoInfo;
+
+        dialog_informacion.setContentView(R.layout.cuadro_dialogo_informacion);
+
+        EntendidoInfo = dialog_informacion.findViewById(R.id.EntendidoInfo);
+
+        EntendidoInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog_informacion.dismiss();
+            }
+        });
+
+        dialog_informacion.show();
+        dialog_informacion.setCanceledOnTouchOutside(false);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.agenda_online.ActualizarNota;
+package com.example.agenda_online.Notas;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -21,6 +21,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.agenda_online.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +43,10 @@ public class Actualizar_Nota extends AppCompatActivity implements AdapterView.On
     Spinner Spinner_estado;
 
     int anio,mes,dia;
+
+
+    FirebaseAuth firebaseAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,9 @@ public class Actualizar_Nota extends AppCompatActivity implements AdapterView.On
         Tarea_No_Finalizada = findViewById(R.id.Tarea_No_Finalizada);
         Spinner_estado = findViewById(R.id.Spinner_estado);
         Estado_nuevo = findViewById(R.id.Estado_nuevo);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
     }
 
     private void RecuperarDatos() {
@@ -165,10 +174,10 @@ public class Actualizar_Nota extends AppCompatActivity implements AdapterView.On
         String estadoActualizar = Estado_nuevo.getText().toString();
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference("Notas_Publicadas");
+        DatabaseReference databaseReference = firebaseDatabase.getReference("Usuarios");
 
         //Consulta
-        Query query = databaseReference.orderByChild("id_nota").equalTo(id_nota_R);
+        Query query = databaseReference.child(user.getUid()).child("Notas_Publicadas").orderByChild("id_nota").equalTo(id_nota_R);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
