@@ -49,6 +49,7 @@
     <string name="Actualizar_Nota_BD">Actualizar</string>
     <string name="Vaciar_Todas_Las_Notas">Vaciar todas las notas</string>
     <string name="Perfil_usuario">Perfil del usuario</string>
+    <string name="Actualizar_pass">Actualizar pass</string>
 
     <!--ITEM NOTA-->
     <string name="Id_nota_Item"> Id nota</string>
@@ -68,7 +69,7 @@
     <!--CUADRO DE DIALOGO - ESTABLECER TELEFONO-->
     <string name="Establecer_Telefono">Escriba su telefono</string>
     <string name="Btn_Aceptar_Telefono">Aceptar</string>
-    
+
     <!--CUADRO DE DIALOGO - ELEGIR IMAGEN DE-->
     <string name="ElegirImagenTXT">Elegir imagen de:</string>
     <string name="Btn_Elegir_Galeria">Galeria</string>
@@ -124,5 +125,13 @@
     <!--PERFIL DEL USUARIO [IMAGEN DE PERFIL]-->
     <string name="BtnElegirImagenDe">Elegir imagen de</string>
     <string name="BtnActualizarImagen">Actualizar imagen</string>
+
+    <!--CAMBIAR PASSWORD-->
+    <string name="ActualPassTXT">Contraseña actual: </string>
+    <string name="ActualPass"> -- </string>
+    <string name="EtActualPass">Contraseña actual</string>
+    <string name="EtNuevoPass">Nueva contraseña</string>
+    <string name="EtRNuevoPass">Repetir nueva contraseña</string>
+    <string name="BtnActualizarPass">Actualizar</string>
 
 </resources>

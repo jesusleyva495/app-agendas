@@ -6,11 +6,10 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Agenda_Online"
         tools:targetApi="31">
+        <activity
+            android:name=".ActualizarPass.ActualizarPassUsuario"
+            android:exported="false" />
         <activity
             android:name=".Perfil.Editar_imagen_perfil"
             android:exported="false" />
