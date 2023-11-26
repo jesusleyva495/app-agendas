@@ -11,9 +11,13 @@ git clone https://github.com/jesusleyva495/app-agendas.git
 ```
 
 ## Integrantes
+
 Leyva Rodríguez Jesús Alberto
+
 Rios Montoya Daniel Antonio
+
 Vizcarra Cota Alfredo
+
 
 ## Funcionalidad
 Las funcionalidades integrades en este proyecto fueron las siguientes:
